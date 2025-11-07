@@ -1,0 +1,32 @@
+.task-row:hover {
+  background-color: #f9fbff !important;
+  transform: scale(1.01);
+  transition: 0.2s ease;
+}
+
+.table-primary {
+  background: linear-gradient(90deg, #007bff, #00b4d8);
+  color: white;
+}
+
+.card {
+  border-radius: 12px !important;
+}
+
+.pagination .page-item.active .page-link {
+  background-color: #007bff;
+  border-color: #007bff;
+}
+
+.pagination .page-item .page-link {
+  color: #007bff;
+}
+
+.pagination .page-item .page-link:hover {
+  background-color: #e9f5ff;
+}
+
+.table td,
+.table th {
+  vertical-align: middle;
+}

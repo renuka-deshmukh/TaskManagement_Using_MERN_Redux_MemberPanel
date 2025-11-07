@@ -1,0 +1,38 @@
+.custom-navbar {
+  background: linear-gradient(90deg, #007bff, #6610f2);
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.custom-navbar .navbar-brand span.text-accent {
+  color: #ffd43b;
+}
+
+.navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.9);
+  margin-right: 1rem;
+  transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover {
+  color: #ffd43b;
+  transform: translateY(-2px);
+}
+
+.user-badge {
+  background: rgba(255, 255, 255, 0.15);
+  font-weight: 500;
+}
+
+.btn-outline-light:hover {
+  background-color: #fff;
+  color: #007bff;
+}
+
+.navbar-toggler {
+  border: none;
+}
+
+.navbar-toggler-icon {
+  filter: invert(1);
+}
