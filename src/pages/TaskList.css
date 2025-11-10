@@ -1,7 +1,17 @@
+.table-responsive::-webkit-scrollbar {
+  display: none; 
+}
+
+.table-responsive {
+  -ms-overflow-style: none; 
+  scrollbar-width: none;   
+}
+
+
 .task-row:hover {
   background-color: #f9fbff !important;
   transform: scale(1.01);
-  transition: 0.2s ease;
+
 }
 
 .table-primary {

@@ -139,18 +139,34 @@ const TaskList = () => {
                     <td>
                       <select
                         className={`form-select form-select-sm ${task.status === "Completed"
-                            ? "border-success text-success"
-                            : task.status === "In Progress"
-                              ? "border-primary text-primary"
-                              : "border-secondary text-secondary"
+                          ? "border-success text-success"
+                          : task.status === "In Progress"
+                            ? "border-primary text-primary"
+                            : "border-secondary text-secondary"
                           }`}
                         value={task.status}
                         onChange={(e) => updateStatusChange(task._id, e.target.value)}
-                        style={{ fontWeight: "600", background: "transparent" }}
+                        style={{
+                          fontWeight: "600",
+                          backgroundImage: "url('data:image/svg+xml;utf8,<svg fill=\"%23000\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M4 6l4 4 4-4\"/></svg>')",
+                          backgroundRepeat: "no-repeat",
+                          backgroundPosition: "right 10px center",
+                          backgroundSize: "12px",
+                          appearance: "none",
+                        }}
+
                       >
-                        <option value="Planned">Planned</option>
-                        <option value="In Progress">In Progress</option>
-                        <option value="Completed">Completed</option>
+                        <option value="Planned" style={{ color: "#6c757d", fontWeight: 600 }}>
+                          Planned
+                        </option>
+
+                        <option value="In Progress" style={{ color: "#0d6efd", fontWeight: 600 }}>
+                          In Progress
+                        </option>
+
+                        <option value="Completed" style={{ color: "#198754", fontWeight: 600 }}>
+                          Completed
+                        </option>
                       </select>
                     </td>
                   </tr>
