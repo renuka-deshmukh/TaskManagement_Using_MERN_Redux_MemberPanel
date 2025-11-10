@@ -1,0 +1,79 @@
+.login-wrapper {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #0d6efd, #6f42c1);
+  padding: 20px;
+}
+
+.login-card {
+  width: 100%;
+  max-width: 420px;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(8px);
+  border-radius: 20px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.login-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+}
+
+.custom-input {
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 15px;
+  border: 1px solid #ced4da;
+  transition: all 0.3s ease;
+}
+
+.custom-input:focus {
+  border-color: #0d6efd;
+  box-shadow: 0 0 8px rgba(13, 110, 253, 0.3);
+}
+
+.custom-btn {
+  border-radius: 10px;
+  padding: 12px;
+  font-size: 17px;
+  font-weight: 600;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.custom-btn:hover {
+  background: #0b5ed7;
+  transform: translateY(-2px);
+}
+
+.register-text {
+  font-size: 15px;
+  color: #555;
+}
+
+.register-link {
+  font-weight: 600;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #084298;
+  text-decoration: underline;
+}
+
+.register-text {
+  font-size: 15px;
+  color: #555;
+}
+
+.register-link {
+  font-weight: 600;
+  color: #0d6efd;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.register-link:hover {
+  color: #084298;
+  text-decoration: underline;
+}
