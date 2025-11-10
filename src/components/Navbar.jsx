@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <nav className="navbar navbar-expand-lg custom-navbar shadow-sm px-3">
       <Link className="navbar-brand fw-bold text-light fs-4" to="/dashboard">
-        <i className="bi bi-kanban me-2"></i>Task<span className="text-accent">Manager</span>
+        <i className="bi bi-kanban me-2"></i>Project<span className="text-accent">Manager</span>
       </Link>
 
       <button

@@ -60,3 +60,7 @@
 .add-task-section:hover {
   background: #e8f2ff;
 }
+.chart-card {
+  border-radius: 20px;
+  background: #ffffff;
+}
