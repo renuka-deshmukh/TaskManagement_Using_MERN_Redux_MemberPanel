@@ -1,42 +1,86 @@
+/* Hide scrollbar */
 .table-responsive::-webkit-scrollbar {
-  display: none; 
+  display: none;
 }
-
 .table-responsive {
-  -ms-overflow-style: none; 
-  scrollbar-width: none;   
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 
-
+/* Hover effect */
 .task-row:hover {
   background-color: #f9fbff !important;
   transform: scale(1.01);
-
 }
 
+/* Table Header */
 .table-primary {
   background: linear-gradient(90deg, #007bff, #00b4d8);
   color: white;
 }
 
-.card {
-  border-radius: 12px !important;
-}
-
+/* Pagination */
 .pagination .page-item.active .page-link {
   background-color: #007bff;
   border-color: #007bff;
 }
-
 .pagination .page-item .page-link {
   color: #007bff;
 }
-
 .pagination .page-item .page-link:hover {
   background-color: #e9f5ff;
 }
 
-.table td,
-.table th {
-  vertical-align: middle;
+/* ------------ 📱 MOBILE RESPONSIVE DESIGN ------------ */
+
+/* Convert table → stacked cards on screens < 768px */
+@media (max-width: 768px) {
+  table.table {
+    display: block;
+  }
+
+  thead {
+    display: none; /* Hide table headers */
+  }
+
+  tbody tr {
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    margin-bottom: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    text-align: left !important;
+  }
+
+  tbody td {
+    display: flex;
+    justify-content: space-between;
+    padding: 8px 4px;
+    font-size: 14px;
+    border: none !important;
+  }
+
+  tbody td::before {
+    content: attr(data-label);
+    font-weight: 700;
+    color: #007bff;
+    margin-right: 8px;
+  }
+
+  .task-row:hover {
+    transform: none;
+  }
+
+  /* Status dropdown */
+  select.form-select {
+    width: 130px;
+    font-size: 13px;
+  }
+
+  /* Header area */
+  h3 {
+    font-size: 18px !important;
+  }
 }
