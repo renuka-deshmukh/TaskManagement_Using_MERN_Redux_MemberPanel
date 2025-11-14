@@ -36,3 +36,29 @@
 .navbar-toggler-icon {
   filter: invert(1);
 }
+
+.navbar-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  object-fit: cover;
+  cursor: pointer;
+  border: 2px solid white;
+}
+
+.avatar-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.avatar-wrapper::after {
+  content: "📷";
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  background: white;
+  font-size: 10px;
+  padding: 2px;
+  border-radius: 50%;
+}
+

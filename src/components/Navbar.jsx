@@ -1,7 +1,7 @@
 import React from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
-import { logout } from "../Redux/auth/authSlice";
+import { getUserInfo, logout, updateAvatar } from "../Redux/auth/authSlice";
 import "./Navbar.css"; 
 
 const Navbar = () => {
@@ -12,6 +12,17 @@ const Navbar = () => {
   function handleLogout() {
     dispatch(logout());
     navigate("/");
+  }
+
+  async function handleAvatarChange(e) {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    const fd = new FormData();
+    fd.append("avatar", file);
+
+    await dispatch(updateAvatar(fd));
+    dispatch(getUserInfo()); // refresh user data
   }
 
   return (
@@ -48,6 +59,24 @@ const Navbar = () => {
         <div className="d-flex align-items-center gap-3">
           {user ? (
             <>
+             {/* Avatar upload & display */}
+              <label className="avatar-wrapper">
+                <img
+                  src={
+                    user.avatar
+                      ? user.avatar
+                      : "https://cdn-icons-png.flaticon.com/512/149/149071.png"
+                  }
+                  alt="avatar"
+                  className="navbar-avatar"
+                />
+                <input
+                  type="file"
+                  hidden
+                  onChange={handleAvatarChange}
+                />
+              </label>
+
               <span className="user-badge text-light px-3 py-1 rounded-pill">
                 <i className="bi bi-person-circle me-1"></i>{user.name}
               </span>

@@ -116,12 +116,12 @@ const TaskList = () => {
             <tbody>
               {currentTasks.length > 0 ? (
                 currentTasks.map((task, i) => (
-                  <tr key={task._id || i} className="task-row">
+                  <tr key={task._id || i} className="task-row text-center">
                     <td>{indexOfFirstTask + i + 1}</td>
-                    <td className="fw-semibold text-start ps-3 text-capitalize">
+                    <td className="fw-semibold text-center ps-3 text-capitalize">
                       {task.title}
                     </td>
-                    <td className="text-muted small text-start">
+                    <td className="text-muted small text-center">
                       {task.description || "-"}
                     </td>
                     <td>{task.projectId?.name || "-"}</td>
@@ -138,7 +138,8 @@ const TaskList = () => {
                     <td>{getPriorityBadge(task.priority)}</td>
                     <td>
                       <select
-                        className={`form-select form-select-sm ${task.status === "Completed"
+                        className={`form-select form-select-sm text-center
+                           ${task.status === "Completed"
                           ? "border-success text-success"
                           : task.status === "In Progress"
                             ? "border-primary text-primary"
