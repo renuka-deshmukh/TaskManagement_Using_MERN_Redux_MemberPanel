@@ -116,61 +116,77 @@ const TaskList = () => {
             <tbody>
               {currentTasks.length > 0 ? (
                 currentTasks.map((task, i) => (
-                  <tr key={task._id || i} className="task-row text-center">
-                    <td>{indexOfFirstTask + i + 1}</td>
-                    <td className="fw-semibold text-center ps-3 text-capitalize">
-                      {task.title}
-                    </td>
-                    <td className="text-muted small text-center">
-                      {task.description || "-"}
-                    </td>
-                    <td>{task.projectId?.name || "-"}</td>
-                    <td>
-                      {task.startDate
-                        ? new Date(task.startDate).toLocaleDateString("en-GB")
-                        : "-"}
-                    </td>
-                    <td>
-                      {task.endDate
-                        ? new Date(task.endDate).toLocaleDateString("en-GB")
-                        : "-"}
-                    </td>
-                    <td>{getPriorityBadge(task.priority)}</td>
-                    <td>
-                      <select
-                        className={`form-select form-select-sm text-center
-                           ${task.status === "Completed"
-                          ? "border-success text-success"
-                          : task.status === "In Progress"
-                            ? "border-primary text-primary"
-                            : "border-secondary text-secondary"
-                          }`}
-                        value={task.status}
-                        onChange={(e) => updateStatusChange(task._id, e.target.value)}
-                        style={{
-                          fontWeight: "600",
-                          backgroundImage: "url('data:image/svg+xml;utf8,<svg fill=\"%23000\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M4 6l4 4 4-4\"/></svg>')",
-                          backgroundRepeat: "no-repeat",
-                          backgroundPosition: "right 10px center",
-                          backgroundSize: "12px",
-                          appearance: "none",
-                        }}
+                 <tr key={task._id || i} className="task-row text-center">
 
-                      >
-                        <option value="Planned" style={{ color: "#6c757d", fontWeight: 600 }}>
-                          Planned
-                        </option>
+  <td data-label="Sr. No">
+    {indexOfFirstTask + i + 1}
+  </td>
 
-                        <option value="In Progress" style={{ color: "#0d6efd", fontWeight: 600 }}>
-                          In Progress
-                        </option>
+  <td data-label="Task" className="fw-semibold text-center ps-3 text-capitalize">
+    {task.title}
+  </td>
 
-                        <option value="Completed" style={{ color: "#198754", fontWeight: 600 }}>
-                          Completed
-                        </option>
-                      </select>
-                    </td>
-                  </tr>
+  <td data-label="Description" className="text-muted small text-center">
+    {task.description || "-"}
+  </td>
+
+  <td data-label="Project">
+    {task.projectId?.name || "-"}
+  </td>
+
+  <td data-label="Start Date">
+    {task.startDate
+      ? new Date(task.startDate).toLocaleDateString("en-GB")
+      : "-"}
+  </td>
+
+  <td data-label="End Date">
+    {task.endDate
+      ? new Date(task.endDate).toLocaleDateString("en-GB")
+      : "-"}
+  </td>
+
+  <td data-label="Priority">
+    {getPriorityBadge(task.priority)}
+  </td>
+
+  <td data-label="Status">
+    <select
+      className={`form-select form-select-sm text-center
+        ${task.status === "Completed"
+          ? "border-success text-success"
+          : task.status === "In Progress"
+            ? "border-primary text-primary"
+            : "border-secondary text-secondary"
+        }`}
+      value={task.status}
+      onChange={(e) => updateStatusChange(task._id, e.target.value)}
+      style={{
+        fontWeight: "600",
+        backgroundImage:
+          "url('data:image/svg+xml;utf8,<svg fill=\"%23000\" viewBox=\"0 0 16 16\" xmlns=\"http://www.w3.org/2000/svg\"><path d=\"M4 6l4 4 4-4\"/></svg>')",
+        backgroundRepeat: "no-repeat",
+        backgroundPosition: "right 10px center",
+        backgroundSize: "12px",
+        appearance: "none",
+      }}
+    >
+      <option value="Planned" style={{ color: "#6c757d", fontWeight: 600 }}>
+        Planned
+      </option>
+
+      <option value="In Progress" style={{ color: "#0d6efd", fontWeight: 600 }}>
+        In Progress
+      </option>
+
+      <option value="Completed" style={{ color: "#198754", fontWeight: 600 }}>
+        Completed
+      </option>
+    </select>
+  </td>
+
+</tr>
+
                 ))
               ) : (
                 <tr>
